@@ -1,0 +1,27 @@
+name: Build Modern C# Application
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Publish Single File EXE
+      run: dotnet publish app.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
+      
+    - name: Upload Finished EXE
+      uses: actions/upload-artifact@v4
+      with:
+        name: BioApp-Ready-For-Mobile
+        path: ./publish/
