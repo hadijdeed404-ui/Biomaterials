@@ -1,0 +1,58 @@
+[
+  {
+    "MaterialName": "Titanium Alloy (Ti-6Al-4V)",
+    "ImagePath": "D:\BioApp-Ready-For-Mobile\Titanium.png",
+    "Composition": "Titanium (Ti), Aluminum (Al), Vanadium (V)",
+    "Porosity": "10 %",
+    "MeanPoreSize": "150 μm",
+    "CompressiveStrength": "900 - 1100 MPa",
+    "ElasticModulus": "110 - 114 GPa",
+    "BioCompatibility": "BioInert",
+    "Applications": "Orthopedic Bone Plates & Screws"
+  },
+  {
+    "MaterialName": "Hydroxyapatite",
+    "ImagePath": "D:\BioApp-Ready-For-Mobile\Hydroxyapatite.png",
+    "Composition": "Hydroxyapatite (HA)",
+    "Porosity": "60 %",
+    "MeanPoreSize": "300 μm",
+    "CompressiveStrength": "100 - 400 MPa",
+    "ElasticModulus": "80 - 100 GPa",
+    "BioCompatibility": "BioActive",
+    "Applications": "Bone Graft Scaffolds"
+  },
+  {
+    "MaterialName": "Bioglass 45S5",
+    "ImagePath": "D:\BioApp-Ready-For-Mobile\Bioglass.png",
+    "Composition": "Bioglass",
+    "Porosity": "45 %",
+    "MeanPoreSize": "250 μm",
+    "CompressiveStrength": "50 - 200 MPa",
+    "ElasticModulus": "30 - 35 GPa",
+    "BioCompatibility": "BioActive",
+    "Applications": "Dental Implants"
+  },
+  {
+    "MaterialName": "Medical Grade PEEK",
+    "ImagePath": "D:\BioApp-Ready-For-Mobile\Peek.png",
+    "Composition": "Zirconia (ZrO2)",
+    "Porosity": "20 %",
+    "MeanPoreSize": "100 μm",
+    "CompressiveStrength": "150 - 200 MPa",
+    "ElasticModulus": "3 - 4 GPa",
+    "BioCompatibility": "BioInert",
+    "Applications": "Spinal Fusion Cages"
+  },
+  {
+    "MaterialName": "Polymethyl Methacrylate (PMMA)",
+    "ImagePath": "D:\BioApp-Ready-For-Mobile\Pmma.png",
+    "Composition": "Polymethyl Methacrylate (PMMA)",
+    "Porosity": "5 %",
+    "MeanPoreSize": "50 μm",
+    "CompressiveStrength": "70 - 100 MPa",
+    "ElasticModulus": "2 - 3 GPa",
+    "BioCompatibility": "Resorbable",
+    "Applications": "Drug Delivery Systems"
+  }
+]
+
