@@ -1,0 +1,57 @@
+[
+  {
+    "MaterialName": "Polymethyl Methacrylate (PMMA)",
+    "ImagePath": "Pmma.jpg",
+    "Composition": "Polymethyl Methacrylate",
+    "Porosity": "5 %",
+    "MeanPoreSize": "50 μm",
+    "CompressiveStrength": "70 - 100 MPa",
+    "ElasticModulus": "2 - 3 GPa",
+    "BioCompatibility": "BioInert",
+    "Applications": "Intraocular Lenses (IOLs)"
+  },
+  {
+    "MaterialName": "Hydroxyapatite",
+    "ImagePath": "Hydroxyapatite.jpg",
+    "Composition": "Hydroxyapatite (HA)",
+    "Porosity": "65 %",
+    "MeanPoreSize": "350 μm",
+    "CompressiveStrength": "100 - 400 MPa",
+    "ElasticModulus": "80 - 110 GPa",
+    "BioCompatibility": "BioActive",
+    "Applications": "Bone Graft Scaffolds"
+  },
+  {
+    "MaterialName": "Bioglass 45S5",
+    "ImagePath": "Bioglass.jpg",
+    "Composition": "Bioglass",
+    "Porosity": "50 %",
+    "MeanPoreSize": "200 μm",
+    "CompressiveStrength": "50 - 500 MPa",
+    "ElasticModulus": "30 - 35 GPa",
+    "BioCompatibility": "BioActive",
+    "Applications": "Dental Implants"
+  },
+  {
+    "MaterialName": "Medical Grade PEEK",
+    "ImagePath": "Peek.jpg",
+    "Composition": "Polyether Ether Ketone",
+    "Porosity": "15 %",
+    "MeanPoreSize": "100 μm",
+    "CompressiveStrength": "150 - 200 MPa",
+    "ElasticModulus": "3 - 4 GPa",
+    "BioCompatibility": "BioInert",
+    "Applications": "Spinal Fusion Cages"
+  },
+  {
+    "MaterialName": "Titanium Alloy (Ti-6Al-4V)",
+    "ImagePath": "Titanium.jpg",
+    "Composition": "Titanium (Ti), Aluminum (Al), Vanadium (V)",
+    "Porosity": "0 %",
+    "MeanPoreSize": "10 μm",
+    "CompressiveStrength": "900 - 1000 MPa",
+    "ElasticModulus": "110 - 115 GPa",
+    "BioCompatibility": "BioInert",
+    "Applications": "Orthopedic Bone Plates & Screws"
+  }
+]
