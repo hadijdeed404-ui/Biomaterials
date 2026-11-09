@@ -1102,7 +1102,6 @@ namespace MyProject
         
     	public MyFirstForm()
 		{
-            // تم ضبط الفورم لتناسب شاشات الفول إتش دي بحجم مريح مع إمكانية التكبير اليدوي
             this.Text = "Biomaterials Analysis Platform";
             this.Size = new Size(1500, 780);
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -1161,7 +1160,6 @@ namespace MyProject
             
             stFontStyle Font2 = new stFontStyle("Segoe UI", 12, FontStyle.Bold);
             
-            // تعديل أبعاد وموقع الـ TabControl ليتناسب مع الارتفاع الجديد (780)
             stTabControlStyle TabStyle = new stTabControlStyle(new Point(490, 45), 
             new Size(980, 660), Color.FromArgb(255, 255, 255), 
             Font2, TabAlignment.Top, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
@@ -1190,7 +1188,6 @@ namespace MyProject
             
             stFontStyle fontList = new stFontStyle("Segoe UI", 11, FontStyle.Bold);
             
-            // تعديل ListView لتتناسب مع الارتفاع الجديد
             stListViewStyle LVstyle = new stListViewStyle(new Point(15, 45), new Size(455, 580), Color.White, Color.FromArgb(30, 41, 59), 
             fontList, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left, View.Details, true, false);
             lstMaterials = clsControlFactory.CreateListView(LVstyle);
@@ -1203,7 +1200,6 @@ namespace MyProject
             
             stFlatAppearanceStyle StyleApper = new stFlatAppearanceStyle(1, Color.FromArgb(203, 213, 225), Color.FromArgb(14, 165, 233), Color.FromArgb(2, 132, 199));
             
-            // تعديل إحداثيات الأزرار السفلية لتظهر بوضوح تمام فوق الحافة
             stButtonStyle BtStyle = new stButtonStyle("Add", new Point(15, 640), new Size(140, 45), Color.FromArgb(14, 165, 233), Color.White, fontList, StyleApper, AnchorStyles.Bottom | AnchorStyles.Left);
             
             btnAddMaterial = clsControlFactory.CreateButton(BtStyle);
@@ -1226,7 +1222,6 @@ namespace MyProject
             this.Controls.Add(btnCompareMaterials);
             btnCompareMaterials.Click += new EventHandler(btnCompareMaterials_Click);
             
-            // عناصر تبويب الاستكشاف Explorer (مع المسار النسبي بجانب التطبيق مباشرة)
             string defaultIconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Icon.png");
             stPictureBox PBstyle = new stPictureBox(new Point(540, 30), new Size(400, 400), PictureBoxSizeMode.Zoom, defaultIconPath, true, null, AnchorStyles.Top | AnchorStyles.Left);
             picMaterialImage = clsControlFactory.CreatePictureBox(PBstyle);
@@ -1246,7 +1241,6 @@ namespace MyProject
             txtMaterialDetails.ScrollBars = ScrollBars.Vertical;
             tabExplorer.Controls.Add(txtMaterialDetails);
             
-            // تبويب فحص التوافق الحيوي BioCompatibility Check
             stFontStyle fontStyle = new stFontStyle("Segoe UI", 12, FontStyle.Bold);
 
             stLabelStyle lblStyle = new stLabelStyle("Enter the biological material data :", new Point(30, 25), new Size(450, 35), Color.Transparent, Color.FromArgb(30, 41, 59), fontStyle, AnchorStyles.Top | AnchorStyles.Left);
@@ -1273,7 +1267,6 @@ namespace MyProject
             txtAiResultReport.WordWrap = false; 
             tabCompatibilityCheck.Controls.Add(txtAiResultReport);
             
-            // تبويب البحث البحث العلمي Search
             stPanelStyle topPanelStyle = new stPanelStyle(
                 new Point(0, 0), 
                 new Size(980, 65), 
@@ -1303,7 +1296,6 @@ namespace MyProject
             
             stFontStyle Font3 = new stFontStyle("Segoe UI", 11, FontStyle.Bold);
             
-            // تبويب مختبر المحاكاة Simulation Lab (بأبعاد منسقة للارتفاع الجديد)
             stGroupBoxStyle GRPstyle1 = new stGroupBoxStyle("BioMaterial Details", new Point(25, 20), new Size(440, 220), fontStyle, AnchorStyles.Top | AnchorStyles.Left, Color.FromArgb(248, 250, 252), Color.FromArgb(30, 41, 59));
             grpMaterialDetails = clsControlFactory.CreateGroupBox(GRPstyle1);
             tabSimulationLab.Controls.Add(grpMaterialDetails);
@@ -1464,7 +1456,6 @@ namespace MyProject
                 }
                 catch (Exception)
                 {
-                    // تحميل احتياطي محلي إن وجد بجانب التطبيق
                     try
                     {
                         string localPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "biomaterials.json");
@@ -1657,7 +1648,10 @@ namespace MyProject
                     };
                     string jsonPayload = JsonSerializer.Serialize(requestBody);
                     System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12 | System.Net.SecurityProtocolType.Tls13;
-                    string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={GeminiApiKey}";
+                    
+                    // --- [التعديل هنا تم تصحيح استدعاء المفتاح من clsGlobal] ---
+                    string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={clsGlobal.GeminiApiKey}";
+                    
                     HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, url);
                     request.Headers.Add("x-goog-api-key", clsGlobal.GeminiApiKey);
                     request.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
